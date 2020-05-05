@@ -4,10 +4,8 @@ h1{
     text-align: center;
 }
 body{
-    background-image:
-    url(https://slyflourish.com/images/dnd_starter_set_art.jpg);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background: rgb(125,42,117);
+    background: radial-gradient(circle, rgba(125,42,117,1) 0%, rgba(4,19,36,1) 100%);
     text-align: center;
 }
 .diceTray {
