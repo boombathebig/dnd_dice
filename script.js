@@ -18,7 +18,7 @@ clickedDice.forEach((dice) => {
             document.getElementById("pastResultsP").innerText=rollArray;
             if (rollArray.length>4){
                 rollArray.pop();}
-                
+                d20.classList.add('rolling');
                 break;   
             
             case "d12":
@@ -28,6 +28,7 @@ clickedDice.forEach((dice) => {
              document.getElementById("pastResultsP").innerText=rollArray;
              if (rollArray.length>4){
                  rollArray.pop();}
+                 d12.classList.add('rolling');
                 break;
 
             case "d10":
@@ -37,6 +38,7 @@ clickedDice.forEach((dice) => {
               document.getElementById("pastResultsP").innerText=rollArray;
               if (rollArray.length>4){
                   rollArray.pop();}
+                  d10.classList.add('rolling');  
                 break;
             
             case "d100":
@@ -46,7 +48,8 @@ clickedDice.forEach((dice) => {
               document.getElementById("pastResultsP").innerText=rollArray;
               if (rollArray.length>4){
                   rollArray.pop();}
-                break;
+                  d100.classList.add('rolling');
+                break; 
 
             case "d6":
                var roll= Math.floor(Math.random()*6+1);  
@@ -55,6 +58,7 @@ clickedDice.forEach((dice) => {
                document.getElementById("pastResultsP").innerText=rollArray;
                if (rollArray.length>4){
                    rollArray.pop();}
+                   d6.classList.add('rolling');
                 break;
 
              case "d4":
@@ -64,9 +68,17 @@ clickedDice.forEach((dice) => {
                 document.getElementById("pastResultsP").innerText=rollArray;
                 if (rollArray.length>4){
                     rollArray.pop();}  
-                break;
+                    d4.classList.add('rolling');
+                break;  
     }        
     });
+function removeTransition(e){
+    if(e.propertyName !== 'transform'){return;
+    } 
+    this.classList.remove('rolling');
+    
+}
+    clickedDice.forEach(dice => dice.addEventListener('transitionend', removeTransition))
     
  
  
