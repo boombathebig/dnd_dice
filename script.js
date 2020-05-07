@@ -1,10 +1,14 @@
 var roll = ""; //contents of top-box (current role)
 let rollArray= [];
+var audio = new Audio('Shake And Roll Dice-SoundBible.com-591494296.wav');
 
 const clickedDice = document.querySelectorAll(".dice");
 clickedDice.forEach((dice) => {
     dice.addEventListener('click',(e) =>{
-    
+        
+        audio.play();
+        audio.currentTime=0;
+            
         switch(event.target.id){ //individual dice rolls
             
             case "d20":
@@ -14,6 +18,7 @@ clickedDice.forEach((dice) => {
             document.getElementById("pastResultsP").innerText=rollArray;
             if (rollArray.length>4){
                 rollArray.pop();}
+                
                 break;   
             
             case "d12":
